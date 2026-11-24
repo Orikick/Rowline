@@ -1,0 +1,112 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+}
+
+/* The featured plan is inverted onto the primary colour. */
+.featured {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: var(--shadow-lifted);
+
+  .summary,
+  .unit,
+  .note {
+    color: inherit;
+    opacity: 0.9;
+  }
+
+  .check {
+    color: var(--color-featured-check);
+  }
+
+  .features {
+    border-top-color: color-mix(in srgb, var(--color-on-primary) 30%, transparent);
+  }
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: var(--step-2);
+}
+
+.badge {
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.summary {
+  margin-top: 0.5rem;
+  color: var(--color-ink-soft);
+}
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 2.2rem + 2vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  color: var(--color-ink-soft);
+  font-size: 0.9375rem;
+}
+
+.note {
+  margin-top: 0.4rem;
+  min-height: 1.6em;
+  color: var(--color-ink-soft);
+  font-size: var(--step-small);
+}
+
+.cta {
+  margin-top: 1.5rem;
+}
+
+.features {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.75rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--color-line);
+  list-style: none;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.check {
+  flex: none;
+  margin-top: 0.25em;
+  color: var(--color-primary);
+}

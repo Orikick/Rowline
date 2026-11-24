@@ -1,0 +1,72 @@
+@use '../../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3.5rem, 8vw, 6.5rem);
+  overflow: hidden;
+
+  /* Lane lines, like a rowing course, fading in from the left. */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 4.5rem,
+      var(--color-line) 4.5rem,
+      var(--color-line) calc(4.5rem + 1px)
+    );
+    -webkit-mask-image: linear-gradient(to right, transparent 25%, #000 100%);
+    mask-image: linear-gradient(to right, transparent 25%, #000 100%);
+    pointer-events: none;
+    display: none;
+
+    @include from(lg) {
+      display: block;
+    }
+  }
+}
+
+.inner {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+
+  @include from(lg) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  }
+}
+
+.title {
+  font-size: var(--step-5);
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.lead {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+  font-size: var(--step-1);
+  color: var(--color-ink-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.note {
+  margin-top: 1rem;
+  font-size: var(--step-small);
+  color: var(--color-ink-soft);
+}
+
+.visual {
+  min-width: 0;
+}

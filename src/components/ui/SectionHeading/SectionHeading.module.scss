@@ -1,0 +1,15 @@
+.heading {
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.title {
+  font-size: var(--step-4);
+}
+
+.intro {
+  margin-top: 1rem;
+  max-width: 60ch;
+  font-size: var(--step-1);
+  color: var(--color-ink-soft);
+}

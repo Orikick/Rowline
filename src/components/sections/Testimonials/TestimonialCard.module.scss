@@ -1,0 +1,75 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+}
+
+.quote {
+  position: relative;
+  font-size: var(--step-1);
+  line-height: 1.5;
+
+  p::before {
+    content: '“';
+  }
+
+  p::after {
+    content: '”';
+  }
+}
+
+/* The featured quote is set larger in the display face. */
+.featured {
+  border-left: 6px solid var(--color-accent);
+
+  .quote {
+    max-width: 34ch;
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.photo,
+.fallback {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.photo {
+  object-fit: cover;
+  background: var(--color-surface-alt);
+}
+
+.fallback {
+  display: grid;
+  place-items: center;
+  background: var(--color-surface-alt);
+  font-weight: 700;
+}
+
+.name {
+  display: block;
+  font-weight: 700;
+}
+
+.role {
+  display: block;
+  color: var(--color-ink-soft);
+  font-size: 0.9375rem;
+}

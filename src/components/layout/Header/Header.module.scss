@@ -1,0 +1,79 @@
+@use '../../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: border-color 0.2s ease;
+}
+
+.scrolled {
+  border-bottom-color: var(--color-line);
+}
+
+.menuOpen {
+  background: var(--color-bg);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  padding: 0.25rem;
+  margin-left: -0.25rem;
+  border-radius: var(--radius-s);
+  text-decoration: none;
+}
+
+.desktopNav {
+  display: none;
+
+  @include from(lg) {
+    display: block;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta {
+  display: none;
+
+  @include from(sm) {
+    display: inline-flex;
+  }
+}
+
+.burger {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-ink);
+
+  &:hover {
+    background: var(--color-surface-alt);
+    border-color: var(--color-ink-soft);
+  }
+
+  @include from(lg) {
+    display: none;
+  }
+}

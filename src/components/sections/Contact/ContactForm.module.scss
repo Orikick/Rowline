@@ -1,0 +1,78 @@
+@use '../../../styles/mixins' as *;
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.title {
+  font-size: var(--step-3);
+}
+
+.required {
+  margin-top: -0.75rem;
+  color: var(--color-ink-soft);
+  font-size: var(--step-small);
+}
+
+.row {
+  display: grid;
+  gap: 1.25rem;
+
+  @include from(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.privacy {
+  color: var(--color-ink-soft);
+  font-size: var(--step-small);
+}
+
+.success {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.successIcon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.successTitle {
+  font-size: var(--step-3);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.successBody {
+  max-width: 48ch;
+  color: var(--color-ink-soft);
+
+  strong {
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+  }
+}

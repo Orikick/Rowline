@@ -1,0 +1,66 @@
+/* Design tokens. Every colour in the app comes from these custom properties,
+   so the dark theme only has to override this one block. */
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #f5f8f6;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e8efeb;
+  --color-ink: #0f2722;
+  --color-ink-soft: #43594f;
+  --color-line: #cdd9d3;
+  --color-primary: #0b5d50;
+  --color-primary-hover: #08473d;
+  --color-on-primary: #ffffff;
+  --color-accent: #f4b41a;
+  --color-on-accent: #0f2722;
+  --color-coral: #cf4f36;
+  --color-danger: #b3261e;
+  --color-focus: #0f2722;
+  --color-featured-check: #f4b41a;
+
+  --shadow-raised: 0 1px 2px rgb(15 39 34 / 0.06), 0 18px 40px -18px rgb(15 39 34 / 0.28);
+  --shadow-lifted: 0 2px 4px rgb(15 39 34 / 0.08), 0 28px 60px -24px rgb(15 39 34 / 0.38);
+
+  --font-display: 'Bricolage Grotesque Variable', 'Trebuchet MS', system-ui, sans-serif;
+  --font-body: 'Instrument Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --step-small: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.375rem;
+  --step-3: clamp(1.5rem, 1.25rem + 1.1vw, 2rem);
+  --step-4: clamp(1.9rem, 1.4rem + 2.3vw, 2.9rem);
+  --step-5: clamp(2.5rem, 1.55rem + 4.3vw, 4.75rem);
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 18px;
+  --radius-pill: 999px;
+
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --section-gap: clamp(4rem, 9vw, 7.5rem);
+  --header-h: 4rem;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #0b1a18;
+  --color-surface: #11231f;
+  --color-surface-alt: #162c27;
+  --color-ink: #e9f1ee;
+  --color-ink-soft: #a7bbb3;
+  --color-line: #27413a;
+  --color-primary: #7fd8c4;
+  --color-primary-hover: #a0e4d4;
+  --color-on-primary: #06211c;
+  --color-coral: #f08a73;
+  --color-danger: #ffb4ab;
+  --color-focus: #f4b41a;
+  --color-featured-check: #06211c;
+
+  --shadow-raised: 0 1px 2px rgb(0 0 0 / 0.4), 0 18px 40px -18px rgb(0 0 0 / 0.7);
+  --shadow-lifted: 0 2px 4px rgb(0 0 0 / 0.45), 0 28px 60px -24px rgb(0 0 0 / 0.8);
+}

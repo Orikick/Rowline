@@ -1,0 +1,49 @@
+@use '../../../styles/mixins' as *;
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* The wrapper above already provides the bottom spacing. */
+.heading {
+  margin-bottom: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include from(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+.item {
+  display: flex;
+}
+
+.skeletonCard {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-height: 26rem;
+  padding: 2rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+}
+
+.footnote {
+  margin-top: 1.5rem;
+  font-size: var(--step-small);
+  color: var(--color-ink-soft);
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rowline | Task management for small teams</title>
+    <meta
+      name="description"
+      content="Rowline is a shared task board for teams of 5 to 50. Plan the week, see who is working on what, and ship without status meetings."
+    />
+    <meta name="theme-color" content="#f5f8f6" />
+    <meta property="og:title" content="Rowline | Task management for small teams" />
+    <meta
+      property="og:description"
+      content="Plan the week, see who is working on what, and ship without status meetings."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Set the theme before first paint so there is no flash of the wrong colours. -->
+    <script>
+      (function () {
+        var theme = 'light';
+        try {
+          var saved = localStorage.getItem('rowline-theme');
+          if (saved === 'light' || saved === 'dark') {
+            theme = saved;
+          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          }
+        } catch (error) {
+          /* Storage is unavailable: keep the light theme. */
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Rowline needs JavaScript to display this page. Turn it on in your browser settings and reload.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+.message {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+  border: 1px dashed var(--color-ink-soft);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+}
+
+.error {
+  border-style: solid;
+  border-color: var(--color-danger);
+}
+
+.icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+  color: var(--color-ink);
+}
+
+.error .icon {
+  color: var(--color-danger);
+}
+
+.text {
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.body {
+  margin-top: 0.25rem;
+  color: var(--color-ink-soft);
+}
+
+.action {
+  margin-top: 1rem;
+}

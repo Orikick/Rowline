@@ -1,0 +1,205 @@
+@use '../../../styles/mixins' as *;
+
+.frame {
+  display: grid;
+  align-items: center;
+  min-height: 17rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: var(--radius-l);
+  background: var(--color-surface-alt);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
+.panelTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Board */
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  align-items: start;
+  padding-bottom: 1.5rem;
+}
+
+.boardLane {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-m);
+  background: var(--color-bg);
+}
+
+.boardLaneTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  padding: 0.15rem 0.15rem 0.25rem;
+  font-weight: 700;
+}
+
+.limit {
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: 0.6875rem;
+  white-space: nowrap;
+}
+
+.boardCard {
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-s);
+  background: var(--color-surface);
+  font-weight: 500;
+}
+
+/* The card being dragged between lanes. */
+.dragged {
+  position: absolute;
+  right: 6%;
+  bottom: 0;
+  width: 42%;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-raised);
+  transform: rotate(-3deg);
+}
+
+/* Workload */
+
+.workload {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+}
+
+.person {
+  display: grid;
+  grid-template-columns: auto 3.5rem minmax(0, 1fr) auto;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.initials {
+  display: inline-grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.personName {
+  font-weight: 600;
+}
+
+.track {
+  height: 0.625rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-alt);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-primary);
+}
+
+.over {
+  background: var(--color-coral);
+}
+
+.hours {
+  min-width: 4.25rem;
+  color: var(--color-ink-soft);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.hoursOver {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+/* Digest */
+
+.digest {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 24rem;
+  width: 100%;
+  margin-inline: auto;
+  padding: 1.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-raised);
+}
+
+.digestHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.digestIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-s);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.digestMeta {
+  color: var(--color-ink-soft);
+}
+
+.digestRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.digestBadge {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+  color: var(--color-ink);
+}
+
+.shipped {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.blocked {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
