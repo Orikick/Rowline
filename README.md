@@ -2,7 +2,7 @@
 
 Developed by **Orest Labiak**.
 
-**Live demo:** https://halden-1.netlify.app/
+**Live demo:** [https://halden-1.netlify.app/](https://rowline.netlify.app/)
 
 <!-- Screenshots: save them to the docs/ folder with these names, then delete this comment's first and last lines.
 ![Desktop view](docs/screenshot-desktop.png)
